@@ -7,3 +7,5 @@
   * Clear Completed
   * Counter function (add-remove)
   * Clear Completed (adds up, down and dissapears if removed)
+
+* TEST TEST TEST
