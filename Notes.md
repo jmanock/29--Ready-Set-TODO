@@ -1,11 +1,14 @@
 #Team Kreider
 
-* "Check Mark" Click Event
-  * Strikethrough the text
-  * Make text opaque
-  * Green check mark
-  * Clear Completed
-  * Counter function (add-remove)
-  * Clear Completed (adds up, down and dissapears if removed)
+* "Check Mark" Click Event (marking a task as complete)
+  * [ ] Strikethrough the text
+  * [ ] Make text opaque
+  * [ ] Green check mark
+  * [ ] Clear Completed shows up with counter
+    * [ ] Subsequent clicks increase/decrease counter
+    * [ ] Dissapears if count < 1
 
-* TEST TEST TEST
+* [ ] Counter function, removes all green checks when clicked
+
+
+
