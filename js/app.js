@@ -29,6 +29,10 @@ $input.bind('addTask', function(){ //Show list of tasks, add the specific task t
 
 */
 
+$('.toggle').click (function(){
+
+});
+
 // Delete Task
 
 $('#todo-list').on('click', '.destroy', function(){
