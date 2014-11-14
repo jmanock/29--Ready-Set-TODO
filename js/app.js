@@ -35,6 +35,11 @@ $('.toggle').click (function(){
 
 // Delete Task
 
+$('.toggle').on('click', function(){
+
+});
+
+
 $('#todo-list').on('click', '.destroy', function(){
 	$(this).closest('li').remove();
 });
