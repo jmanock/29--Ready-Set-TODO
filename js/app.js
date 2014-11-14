@@ -94,4 +94,3 @@ jQuery(function ($) {
 		}
 	};
 	App.init();
-
