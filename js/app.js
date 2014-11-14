@@ -10,12 +10,18 @@ $input.keyup(function(enter){
 	if(enter.keyCode === 13) {
 		$(this).trigger('addTask');
 	}
-})
+});
 
 $input.bind('addTask', function(){
 	if ($input.val().trim().length > 0) {
-		$('#todo-list').show().append('<li><label>' + $input.val() + '</label></li>');
+		$('#todo-list').show().append('<li><div class="view"><input class="toggle" type="checkbox" checked><label>' + $input.val() + '</label><button class="destroy"></button></input></div></li>');
 		$('#main').css({display: 'block'});
 		$input.val('');
 	}
+});
+
+
+
+$('#todo-list').on('click', '.destroy', function(){
+	$(this).closest('li').remove();
 });
