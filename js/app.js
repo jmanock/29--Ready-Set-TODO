@@ -125,6 +125,10 @@ $input.bind('addTask', function(){ //Show list of tasks, add the specific task t
 
 */
 
+$('.toggle').click (function(){
+
+});
+
 // Delete Task
 
 $('.toggle').on('click', function(){
