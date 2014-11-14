@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 jQuery(function ($) {
 	'use strict';
 	var App = {
@@ -93,4 +94,4 @@ jQuery(function ($) {
 		}
 	};
 	App.init();
-});
+
