@@ -1,5 +1,3 @@
-// Your starting point. Enjoy the ride!
-
 // $("#/active").click(function(){
 // 	$( ".main > li" ).not( ".completed" ).css( "display", "none" );
 // })
@@ -7,10 +5,10 @@
 var $input = $('#new-todo'); // assigning the HTML element defined for this operation.
 
 //Create Task
-
 $input.keyup(function(enter){
-	if(enter.keyCode === 13) {     // if the "enter" key is pressed, then it will trigger the 'addTask' function.
+	if(enter.keyCode === 13) { // if the "enter" key is pressed, then it will trigger the 'addTask' function.
 		$(this).trigger('addTask');
+  alert( "reload " );
 	}
 });
 
@@ -26,18 +24,15 @@ $input.bind('addTask', function(){ //Show list of tasks, add the specific task t
 1. Text strikethrough
 2. Text Light Grey
 3. Checkmark becomes green.
-
 */
-
-$('.toggle').click (function(){
-
+$('.toggle').click(function(){
+  alert('clicking'!)
 });
 
 // Delete Task
+// $('.toggle').on('click', function(){
 
-$('.toggle').on('click', function(){
-
-});
+// });
 
 
 $('#todo-list').on('click', '.destroy', function(){
