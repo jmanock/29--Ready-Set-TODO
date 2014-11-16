@@ -30,7 +30,7 @@ jQuery(function ($) {
 		plural: function(count) {
 			var text;
 			if (count > 1 || count === 0) {
-				text = $('#todo-count').html().replace('item','items');
+				text = $('#todo-count').html().replace('item left','items left');
 			} else {
 				text = $('#todo-count').html().replace('items','item');
 			}
