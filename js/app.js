@@ -90,6 +90,10 @@ jQuery(function ($) {
 			$('.editing label').html($('.editing').children('.edit').val().trim());
 			$('.editing').removeClass('editing');
 		}
-	};
+	},
+	/*Checked/Properties
+	if todo-list li is checked
+		then display css property '#todo-list li.completed label' from base.css file to todo item.
+	*/
 	App.init();
  });
