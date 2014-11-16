@@ -4,7 +4,7 @@
 
 var $input = $('#new-todo'); // assigning the HTML element defined for this operation.
 
-//Create Task
+// ==== Create Task ====
 $input.keyup(function(enter){
 	if(enter.keyCode === 13) { // if the "enter" key is pressed, then it will trigger the 'addTask' function.
 		$(this).trigger('addTask');
@@ -20,19 +20,44 @@ $input.bind('addTask', function(){ //Show list of tasks, add the specific task t
 	}
 });
 
-/* .toggle on click add attr 'checked', and adding class completed to the closest li.
-1. Text strikethrough
-2. Text Light Grey
-3. Checkmark becomes green.
-*/
-$('.toggle').click(function(){
-  alert('clicking'!)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// when task is clicked...
+$('#todo-list').on("click", "li", function(){
+  // 1. give it or remove `completed` class
+  $(this).toggleClass('completed');
+  // 2. toggle checkbox state, i.e. checked -> unchecked and viceversa
+
 });
 
-// Delete Task
-// $('.toggle').on('click', function(){
 
-// });
 
 
 $('#todo-list').on('click', '.destroy', function(){
