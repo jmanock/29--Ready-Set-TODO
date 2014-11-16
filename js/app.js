@@ -90,10 +90,11 @@ jQuery(function ($) {
 			$('.editing label').html($('.editing').children('.edit').val().trim());
 			$('.editing').removeClass('editing');
 		}
-	},
-	/*Checked/Properties
-	if todo-list li is checked
-		then display css property '#todo-list li.completed label' from base.css file to todo item.
-	*/
+	};
 	App.init();
  });
+
+// Testing out the code for the click.
+$('#todo-list').click(function() {                   //This should select the li's under #todo-list
+	$('li').toggle('#todo-list li.completed label');  // And apply the CSS described upon click.
+});
