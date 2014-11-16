@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 jQuery(function ($) {
 	'use strict';
 	var App = {
@@ -67,8 +66,6 @@ jQuery(function ($) {
 		edit: function(e) {
 			var newInput = $(e.target).closest('li').addClass('editing').find('.edit');
 			newInput.focus();
-
-<<<<<<< HEAD
 		},
 		//Keyup functionality for edit
 		editKeyup: function(enter) {
@@ -95,70 +92,3 @@ jQuery(function ($) {
 		}
 	};
 	App.init();
-=======
-// $("#/active").click(function(){
-// 	$( ".main > li" ).not( ".completed" ).css( "display", "none" );
-// })
-
-var $input = $('#new-todo'); // assigning the HTML element defined for this operation.
-
-// ==== Create Task ====
-$input.keyup(function(enter){
-	if(enter.keyCode === 13) { // if the "enter" key is pressed, then it will trigger the 'addTask' function.
-		$(this).trigger('addTask');
-  alert( "reload " );
-	}
-});
-
-$input.bind('addTask', function(){ //Show list of tasks, add the specific task to the bottom of the list, line 18 is a mystery.
-	if ($input.val().trim().length > 0) { // As long as the field has more than 0 characters, then proceed.
-		$('#todo-list').show().append('<li><div class="view"><input class="toggle" type="checkbox"><label>' + $input.val() + '</label><button class="destroy"></button></input></div></li>');// WTF with the checked? Isn't it supposed to be unchecked?
-		$('#main').css({display: 'block'});
-		$input.val('');
-	}
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// when task is clicked...
-$('#todo-list').on("click", "li", function(){
-  // 1. give it or remove `completed` class
-  $(this).toggleClass('completed');
-  // 2. toggle checkbox state, i.e. checked -> unchecked and viceversa
-
-});
-
-
-
-
-$('#todo-list').on('click', '.destroy', function(){
-	$(this).closest('li').remove();
-});
->>>>>>> 9b45facd1d52dec8dd2afbd24dcf16bbc7c96f62
