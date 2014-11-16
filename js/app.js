@@ -7,7 +7,7 @@ jQuery(function ($) {
 			this.bindEvents();
 			this.todoCounter();
 		},
-		//Cashe elements into variables
+		//Cache elements into variables
 		cacheEle: function() {
 			this.$todoApp = $('#todoapp');
 			this.$header = this.$todoApp.find('#header');
