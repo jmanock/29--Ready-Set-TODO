@@ -31,6 +31,7 @@ jQuery(function ($) {
 			$('#filter-completed').bind('click', this.filterCompleted);
 			$('#toggle-all').bind('click', this.toggleAll);
 			$(document).bind('click', this.stopEdit);
+			$('#clear-completed').bind('click', this.clearCompleted);
 		},
 		//Toggle class completed of all Li's
 		toggleAll: function() {
@@ -85,7 +86,7 @@ jQuery(function ($) {
 					$('#todo-list').show().append('<li><div class="view"><input class="toggle" type="checkbox"><label>' + $input.val() + '</label><button class="destroy"></button></input></div><input class="edit" value="' + $input.val() + '"></input></li>');
 					$('#main').css({display: 'block'});
 					$input.val('');
-					this.todoCounter();
+					App.todoCounter();
 				}
 			}
 		},
@@ -111,7 +112,7 @@ jQuery(function ($) {
 		//Delete functionality for each LI
 		destroy: function(e) {
 			$(e.target).closest('li').remove();
-			this.todoCounter();
+			App.todoCounter();
 		},
 		//Remove the Editing class when you click anywhere in the document
 		stopEdit: function() {
@@ -137,6 +138,10 @@ jQuery(function ($) {
 			$('#filters a').css('font-weight', 'normal');
 			$('#filter-all').css('font-weight', 'bold');
 			$('#todo-list li').removeClass('hidden');
+		},
+		clearCompleted: function() {
+			$('.completed').remove();
+			App.todoCounter();
 		}
 	};
 	//Call the method init of App
