@@ -149,9 +149,9 @@ jQuery(function ($) {
 			var completedTodos = 'Clear completed (' + completed + ')';
 			$('#clear-completed').text(completedTodos);
 			if (completed === 0) {
-				$('#clear-completed').css('display', 'none');
+				$('#clear-completed').addClass('hidden');
 			} else {
-				$('#clear-completed').css('display', 'block');
+				$('#clear-completed').removeClass('hidden');
 			}
 		}
 	};
