@@ -6,6 +6,7 @@ jQuery(function ($) {
 			this.cacheEle();
 			this.bindEvents();
 			this.todoCounter();
+			this.filterAll();
 		},
 		//Cashe elements into variables
 		cacheEle: function() {
@@ -24,7 +25,33 @@ jQuery(function ($) {
 			list.on('click', '.destroy', this.destroy.bind(this));
 			list.on('dblclick','.view label', this.edit.bind(this));
 			list.on('keyup', '.edit', this.editKeyup.bind(this));
+			list.on('click', '.toggle', this.toggleItem);
+			$('#filter-all').bind('click', this.filterAll);
+			$('#filter-active').bind('click', this.filterActive);
+			$('#filter-completed').bind('click', this.filterCompleted);
+			$('#toggle-all').bind('click', this.toggleAll);
 			$(document).bind('click', this.stopEdit);
+		},
+		//Toggle class completed of all Li's
+		toggleAll: function() {
+			if ($('#todo-list li').hasClass('')) {
+				$('#todo-list li').addClass('completed');
+				$('.toggle').prop('checked', true);
+			} else {
+				$('.toggle').prop('checked', false);
+				$('#todo-list li').removeClass('completed');
+			}
+			App.todoCounter();
+		},
+		//Toggle class completed of just the Li that is clicked
+		toggleItem: function() {
+			$(this).closest('li').toggleClass('completed');
+			if($('.completed').length === $('#todo-list li').length) {
+				$('#toggle-all').prop('checked', true);
+			} else {
+    		$('#toggle-all').prop('checked', false);
+			}
+			App.todoCounter();
 		},
 		//Make item left plural if more than 1 incomplete task on the list
 		plural: function(count) {
@@ -39,7 +66,7 @@ jQuery(function ($) {
 		//Keep count of incompleted tasks
 		todoCounter: function() {
 			var todoCount = $('#todo-list').children('li').length;
-			var completedTodos = $('#todo-list').children('.completed').length;
+			var completedTodos = $('#todo-list').children('completed').length;
 			var activeTodos = todoCount - completedTodos;
 			$('#todo-count strong').html(activeTodos);
 			this.plural(todoCount);
@@ -90,7 +117,28 @@ jQuery(function ($) {
 		stopEdit: function() {
 			$('.editing label').html($('.editing').children('.edit').val().trim());
 			$('.editing').removeClass('editing');
+		},
+		//Show only active tasks
+		filterActive: function() {
+			$('#filters a').css('font-weight', 'normal');
+			$('#filter-active').css('font-weight', 'bold');
+			$('.completed').addClass('hidden');
+			$('#todo-list li:not(.completed)').removeClass('hidden');
+		},
+		//Show only completed tasks
+		filterCompleted: function() {
+			$('#filters a').css('font-weight', 'normal');
+			$('#filter-completed').css('font-weight', 'bold');
+			$('.completed').removeClass('hidden');
+			$('#todo-list li:not(.completed)') .addClass('hidden');
+		},
+		//Show all tasks
+		filterAll: function() {
+			$('#filters a').css('font-weight', 'normal');
+			$('#filter-all').css('font-weight', 'bold');
+			$('#todo-list li').removeClass('hidden');
 		}
 	};
+	//Call the method init of App
 	App.init();
 });
