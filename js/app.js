@@ -1,5 +1,17 @@
 jQuery(function ($) {
 	'use strict';
+
+	$('#todo-list').on('click', '.toggle', function(){
+		$(this).closest('li').toggleClass('completed');
+		//Clear Completed button: display # of completed tasks
+		$('#completed').text(completedTodos);
+
+		//Hide "Clear Completed" button if there's no incomplete tasks
+		if ($('#todo-list').children('.completed').length === 0){
+		$('#clear-completed').addClass('hidden');
+		}
+	});
+
 	var App = {
 		//Run these functions when init is called
 		init: function() {
@@ -77,6 +89,8 @@ jQuery(function ($) {
 			} else {
 				$('#footer').css('display', 'block');
 			}
+		  //Clear Completed button: display # of completed tasks
+      $('#completed').text(completedTodos);
 		},
 		//Entering a new LI into the list when you hit Enter
 		createEle: function(enter) {
