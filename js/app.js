@@ -1,4 +1,4 @@
-jQuery(function ($) {
+(function (window) {
 	'use strict';
 	var App = {
 		//Run these functions when init is called
@@ -157,4 +157,4 @@ jQuery(function ($) {
 	};
 	//Call the method init of App
 	App.init();
-});
+}) (window);
