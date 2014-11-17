@@ -6,7 +6,6 @@ jQuery(function ($) {
 			this.cacheEle();
 			this.bindEvents();
 			this.todoCounter();
-			this.completedCounter();
 			this.filterAll();
 		},
 		//Cashe elements into variables
@@ -44,7 +43,6 @@ jQuery(function ($) {
 				$('#todo-list li').removeClass('completed');
 			}
 			App.todoCounter();
-			App.completedCounter();
 		},
 		//Toggle class completed of just the Li that is clicked
 		toggleItem: function() {
@@ -55,7 +53,6 @@ jQuery(function ($) {
     		$('#toggle-all').prop('checked', false);
 			}
 			App.todoCounter();
-			App.completedCounter();
 		},
 		//Make item left plural if more than 1 incomplete task on the list
 		plural: function(count) {
@@ -80,6 +77,7 @@ jQuery(function ($) {
 			} else {
 				$('#footer').css('display', 'block');
 			}
+			App.completedCounter();
 		},
 		//Entering a new LI into the list when you hit Enter
 		createEle: function(enter) {
@@ -150,6 +148,11 @@ jQuery(function ($) {
 			var completed = $('#todo-list').children('.completed').length;
 			var completedTodos = 'Clear completed (' + completed + ')';
 			$('#clear-completed').text(completedTodos);
+			if (completed === 0) {
+				$('#clear-completed').css('display', 'none');
+			} else {
+				$('#clear-completed').css('display', 'block');
+			}
 		}
 	};
 	//Call the method init of App
